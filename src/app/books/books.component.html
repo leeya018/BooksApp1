@@ -1,0 +1,11 @@
+<div>
+  <h2>JLKSZJLKJLKDSF</h2>
+  <ul>
+    <li *ngFor="let book of books">
+      <button (click)="onSelect(book)"><h3>{{book.title}}</h3></button>
+    </li>
+  </ul>
+  <app-book-details [book]="selectedBook"></app-book-details>
+
+  <!--book is the input of the inner component book-details-->
+</div>
