@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Book } from '../book';
 import { BooksService } from '../books.service';
-import { BookDetailsComponent } from '../book-details/book-details.component';
+// import { BookDetailsComponent } from '../book-details/book-details.component';
 
 @Component({
   selector: 'app-books',
@@ -18,15 +18,15 @@ export class BooksComponent implements OnInit {
 
   constructor(private booksService: BooksService) { }
 
-  ngOnInit() {
+  ngOnInit():void {
     this.getBooks();
   }
 
-  getBooks() {
+  getBooks():void {
      this.booksService.getBooks().then((books) => this.books = books);
   }
 
-  onSelect(book:Book){
+  onSelect(book:Book):void{
     this.selectedBook = book;
   }
 }

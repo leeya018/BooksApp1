@@ -1,9 +1,7 @@
 <div>
   <h2>JLKSZJLKJLKDSF</h2>
   <ul>
-    <li *ngFor="let book of books">
-      <button (click)="onSelect(book)"><h3>{{book.title}}</h3></button>
-    </li>
+    <li *ngFor="let book of books" (click)="onSelect(book)"><h3>{{book.title}}</h3></li>
   </ul>
   <app-book-details [book]="selectedBook"></app-book-details>
 
