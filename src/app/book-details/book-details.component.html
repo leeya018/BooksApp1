@@ -2,8 +2,15 @@
   <h3>sadlkjlksajdlkjsalk!</h3>
 
   <h3>{{book.author}} details!</h3>
-  <!--book does not get init!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
-  <label>author : </label><input [(ngModel)]="book.author"  />
-  <!--<label>date : </label><input #date />
-  <label>title : </label><input #title />-->
+  <div>
+    <label>title : </label> {{book.title}}
+  </div>
+  <div>
+    <label>date : </label><input [(ngModel)]="book.date" />
+  </div>
+  <div>
+  <label>author : </label><input [(ngModel)]="book.author" />
+</div>
+<!--just to see the details get changed-->
+<label>details : {{book.date}} |     |  {{book.author}}</label>
 </div>
