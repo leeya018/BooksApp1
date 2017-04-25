@@ -17,23 +17,24 @@ export class BooksComponent implements OnInit {
 
 
   constructor(
-    private router:Router,
+    private router: Router,
     private booksService: BooksService
-    ) { }
+  ) { }
 
-  ngOnInit():void {
+  ngOnInit(): void {
     this.getBooks();
   }
 
-  getBooks():void {
-     this.booksService.getBooks().then((books) => this.books = books);
+  getBooks(): void {
+    this.booksService.getBooks().then((books) => this.books = books);
   }
 
-  onSelect(book:Book):void{
+  onSelect(book: Book): void {
     this.selectedBook = book;
   }
 
-  gotoDetail():void{
+  gotoDetail(): void {
     this.router.navigate(['/details',this.selectedBook.title]);//navigate to other component
+    //if it was "/books" before so now it  will be "detail/<title> on the browser"
   }
 }

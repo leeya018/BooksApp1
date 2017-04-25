@@ -28,7 +28,9 @@ export class BookDetailsComponent implements OnInit {
       log(params);// first obbj  = > Object {title: "MAMYAMI"}
       return this.booksService.getBook(params['title'])}).
       subscribe(book=>this.book = book);
-      //switchMap
+      //switchMap - make the Promise that should return ftom the BookService to a Obsevable, so we can use subscribe 
+      //            and in there wee init out book property
+      // we sending the getBook function the title from params - params['title']
   }
 
   goBack(): void {
