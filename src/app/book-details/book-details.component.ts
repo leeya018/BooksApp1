@@ -13,7 +13,7 @@ import { BooksService } from '../books.service';
   styleUrls: ['./book-details.component.css']
 })
 export class BookDetailsComponent implements OnInit {
-  @Input() book: Book;
+   book: Book; 
 
   constructor(
     private booksService: BooksService,
@@ -22,7 +22,13 @@ export class BookDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.params.switchMap((params: Params) => this.booksService.getBook(params['title'])).subscribe(book => this.book = book);
+    this.route.params.switchMap((params:Params)=>
+    {
+      var log = console.log;
+      log(params);// first obbj  = > Object {title: "MAMYAMI"}
+      return this.booksService.getBook(params['title'])}).
+      subscribe(book=>this.book = book);
+      //switchMap
   }
 
   goBack(): void {
