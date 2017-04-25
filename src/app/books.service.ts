@@ -9,9 +9,11 @@ import { BOOKS } from './mock-book';
 export class BooksService {
 
 
-    getBooks():Promise<Book[]> {
+    getBooks(): Promise<Book[]> {
         return Promise.resolve(BOOKS);
     }
 
-
+    getBook(title: string): Promise<Book> {
+        return this.getBooks().then(books => books.find(book => book.title === title));
+    }
 }

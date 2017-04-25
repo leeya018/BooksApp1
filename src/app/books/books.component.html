@@ -1,9 +1,14 @@
 <div>
   <h2>JLKSZJLKJLKDSF</h2>
   <ul>
-    <li *ngFor="let book of books" (click)="onSelect(book)"><h3>{{book.title}}</h3></li>
+    <li class = ".items" *ngFor="let book of books" (click)="onSelect(book)"><h3>{{book.title}}</h3></li>
   </ul>
-  <app-book-details [book]="selectedBook"></app-book-details>
+
+  <div *ngIf ="selectedBook">
+    <h2>{{selectedBook.title}} is my book!</h2>
+    <button (click) = "gotoDetail()">view details</button>
+  </div>
+  <!--<app-book-details [book]="selectedBook"></app-book-details>-->
 
   <!--book is the input of the inner component book-details-->
   <!--push to myBranch branch , and then merge to to myMaster-->

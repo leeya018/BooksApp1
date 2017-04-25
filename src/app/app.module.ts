@@ -12,19 +12,18 @@ import { BookDetailsComponent } from './book-details/book-details.component';
 import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [
+  imports: [//this for the modules
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule
+  ],
+  declarations: [//this for the comoponents
     AppComponent,
     BooksComponent,
-    BookDetailsComponent,
-    AppRoutingModule],
-
-  imports: [
-    BrowserModule,
-    FormsModule
-    // HttpModule
+    BookDetailsComponent
   ],
-  exports: [RouterModule],
-  providers: [BooksService],
-  bootstrap: [AppComponent]
+
+  providers: [BooksService],//the services I will use
+  bootstrap: [AppComponent]//first component to load
 })
 export class AppModule { }

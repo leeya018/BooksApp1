@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 
 import { Book } from '../book';
 import { BooksService } from '../books.service';
@@ -16,7 +16,10 @@ export class BooksComponent implements OnInit {
   selectedBook: Book;
 
 
-  constructor(private booksService: BooksService) { }
+  constructor(
+    private router:Router,
+    private booksService: BooksService
+    ) { }
 
   ngOnInit():void {
     this.getBooks();
@@ -28,5 +31,9 @@ export class BooksComponent implements OnInit {
 
   onSelect(book:Book):void{
     this.selectedBook = book;
+  }
+
+  gotoDetail():void{
+    this.router.navigate(['/details',this.selectedBook.title]);//navigate to other component
   }
 }
